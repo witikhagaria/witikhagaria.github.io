@@ -1,0 +1,220 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #f7f9fc;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header & Navbar */
+header {
+  background: #005792;
+  padding: 1rem 0;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav li {
+  margin-left: 2rem;
+  position: relative;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  transition: 0.3s;
+}
+
+nav a::after {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: #fff;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  transition: 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Dropdown Trades */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 40px;
+  background: #fff;
+  color: #000;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  flex-direction: column;
+  width: 300px;
+  z-index: 999;
+}
+
+.dropdown:hover .dropdown-content {
+  display: flex;
+}
+
+.trade-card {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.trade-card img {
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+  border-radius: 8px;
+}
+
+/* Hero */
+#hero {
+  padding: 4rem 2rem;
+  background: linear-gradient(to right, #005792, #00bcd4);
+  color: #fff;
+  text-align: center;
+  animation: fadeIn 2s ease-in-out;
+}
+
+#hero h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+#hero .btn {
+  background: #fff;
+  color: #005792;
+  padding: 0.6rem 1.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  margin-top: 1rem;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+#hero .btn:hover {
+  background: #f0f0f0;
+}
+
+/* Staff Section */
+#staff {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.staff-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  margin-top: 1.5rem;
+}
+
+.staff-card {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.staff-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Gallery */
+#gallery {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.gallery-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin-top: 1.5rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.03);
+}
+
+/* Contact */
+#contact {
+  background: #e2e8f0;
+  padding: 2rem;
+  text-align: center;
+}
+
+#contact i {
+  margin-right: 10px;
+  color: #005792;
+}
+
+/* Footer */
+footer {
+  background: #003f5c;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px);}
+  100% { opacity: 1; transform: translateY(0);}
+}
+
+@media screen and (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    background: #005792;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    display: none;
+  }
+  nav ul.show {
+    display: flex;
+  }
+}
